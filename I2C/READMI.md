@@ -77,3 +77,16 @@
 
 ![alt text](image-10.png)
 
+#### 1.6 Clock stretching
+
+- One of the important features of I2C protocol is clock stretching, which is used to temporarily halt the master's clock signal by a slave device until it's ready to continue with the transmission. Clock stretching allows the slave device to have control over the timing of the communication and enables it to request more time to complete its operation. 
+
+- In I2C communication, the master device generates the clock signal which is used to synchronize the communication between the devices. The master device controls the data transmission by sending the start and stop signals, and it determines the clock frequency for the communication. The slave devices, on the other hand, respond to the master's commands by sending or receiving data on the data lines. 
+
+![alt text](image-11.png)
+
+- When a slave device needs more time to process the data or is not ready to send data, it can hold the clock signal low, which is known as clock stretching. In this case, the slave device holds the SCL (Serial Clock) line low while keeping the SDA (Serial Data) line high. The master device detects this condition and waits for the slave device to release the clock signal before continuing with the communication. 
+
+![alt text](image-12.png)
+
+- The clock stretching technique allows slave devices to slow down the communication speed and temporarily suspend the communication with the master device. This can be useful in scenarios where the slave device needs more time to complete its operation or if there is a delay in the response due to some external factors. Clock stretching is an essential feature in I2C communication, especially in scenarios where different devices have varying processing speeds or when one device is slower than the other. 
