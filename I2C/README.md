@@ -77,6 +77,7 @@
 
 ![alt text](image-10.png)
 
+
 #### 1.6 Clock stretching
 
 - One of the important features of I2C protocol is clock stretching, which is used to temporarily halt the master's clock signal by a slave device until it's ready to continue with the transmission. Clock stretching allows the slave device to have control over the timing of the communication and enables it to request more time to complete its operation. 
@@ -90,3 +91,10 @@
 ![alt text](image-12.png)
 
 - The clock stretching technique allows slave devices to slow down the communication speed and temporarily suspend the communication with the master device. This can be useful in scenarios where the slave device needs more time to complete its operation or if there is a delay in the response due to some external factors. Clock stretching is an essential feature in I2C communication, especially in scenarios where different devices have varying processing speeds or when one device is slower than the other. 
+### 2. Code
+
+#### 2.1 Master
+
+- waveform
+
+![alt text](image-13.png)
