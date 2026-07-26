@@ -7,7 +7,7 @@ module baud_gen(
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             scl_clk <= 0;
-            clk_cnt <=0;
+            clk_cnt <= 0;
         end
         else begin
             if (clk_cnt == 249) begin

@@ -1,9 +1,9 @@
 module tri_state(
-    input sda_en,
-    input sda_out,
-    output sda_in,
+    input en,       
+    input din,
+    output dout,
     inout pad
 );
-    assign pad = sda_en ? sda_out : 1'bz;
-    assign sda_in = pad;
+    assign pad = en ? din : 1'bz;
+    assign dout = pad;
 endmodule
