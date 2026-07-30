@@ -1,7 +1,7 @@
 module baud_rate_generator (
     input clk,          // Clock hệ thống (50MHz)
     input reset,        // Reset tích cực cao
-    output reg tick     // Xung tick cho Rx và Tx (gấp 16 lần Baud rate)
+    output reg tick   // Xung tick cho Rx và Tx (gấp 16 lần Baud rate)
 );
 
     reg [8:0] counter; // 326 cần 9 bits (2^9 = 512)
