@@ -6,6 +6,8 @@ module baud_rate_generator (
 
   reg [8:0] counter; // 326 cần 9 bits (2^9 = 512)
 
+
+  
   always @(posedge clk or posedge reset)
   begin
     if (reset)
