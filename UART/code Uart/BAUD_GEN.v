@@ -4,10 +4,8 @@ module baud_rate_generator (
     output reg tick   // Xung tick cho Rx và Tx (gấp 16 lần Baud rate)
   );
 
-  reg [8:0] counter; // 326 cần 9 bits (2^9 = 512)
+  reg [8:0] counter;// 326 cần 9 bits (2^9 = 512)
 
-
-  
   always @(posedge clk or posedge reset)
   begin
     if (reset)
