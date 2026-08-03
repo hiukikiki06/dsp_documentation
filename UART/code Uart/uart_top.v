@@ -10,36 +10,36 @@ module uart_top (
     output tx_done,
     output rx_done,
     output [7:0] rx_data
-);
+  );
 
-    wire tick;
+  wire tick;
 
-    // Gọi bộ sinh Baud Rate
-    baud_rate_generator baud_gen (
-        .clk(clk),
-        .reset(reset),
-        .tick(tick)
-    );
+  // Gọi bộ sinh Baud Rate
+  baud_rate_generator baud_gen (
+                        .clk(clk),
+                        .reset(reset),
+                        .tick(tick)
+                      );
 
-    // Gọi bộ nhận Rx
-    uart_rx receiver (
-        .clk(clk),
-        .reset(reset),
-        .rx(rx),
-        .tick(tick),
-        .rx_done_tick(rx_done),
-        .dout(rx_data)
-    );
+  // Gọi bộ nhận Rx
+  uart_rx receiver (
+            .clk(clk),
+            .reset(reset),
+            .rx(rx),
+            .tick(tick),
+            .rx_done_tick(rx_done),
+            .dout(rx_data)
+          );
 
-    // Gọi bộ truyền Tx
-    uart_tx transmitter (
-        .clk(clk),
-        .reset(reset),
-        .tx_start(tx_start),
-        .tick(tick),
-        .din(tx_data),
-        .tx_done_tick(tx_done),
-        .tx(tx)
-    );
+  // Gọi bộ truyền Tx
+  uart_tx transmitter (
+            .clk(clk),
+            .reset(reset),
+            .tx_start(tx_start),
+            .tick(tick),
+            .din(tx_data),
+            .tx_done_tick(tx_done),
+            .tx(tx)
+          );
 
 endmodule
